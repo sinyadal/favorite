@@ -1,1 +1,0 @@
-https://scotch.io/tutorials/implement-a-favoriting-feature-using-laravel-and-vue-js
