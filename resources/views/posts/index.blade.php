@@ -7,6 +7,19 @@
 
             @forelse ($posts as $post)
 
+            <div class="card mb-3">
+                <div class="card-content">
+                    <p class="title is-4">Lorem ipsum dolor sit amet.</p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, aperiam!
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, aperiam!
+                </div>
+            </div>
+
             <div class="card mb-4">
                 <div class="card-body">
                     <h5 class="card-title">{{ $post->title }}</h5>
@@ -29,6 +42,19 @@
             <p>No post created.</p>
 
             @endforelse {{ $posts->links() }}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="columns">
+        <div class="column">
+            <forma></forma>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <snackbar></snackbar>
+            </div>
         </div>
     </div>
 </div>
