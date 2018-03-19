@@ -1,14 +1,13 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-// Variables
+// Custom variables
 @import "variables";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// Import Bulma and Buefy styles
+@import "~bulma/bulma";
+@import "~buefy/src/scss/buefy";
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+// Spacing helpers
+@import "spacings";
