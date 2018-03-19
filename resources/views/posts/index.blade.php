@@ -9,6 +9,7 @@
 
             <div class="card mb-3">
                 <div class="card-content">
+                    <i class="material-icons is-pulled-right">favorite_border</i>
                     <p class="title is-4">Lorem ipsum dolor sit amet.</p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, aperiam!
                 </div>
@@ -28,11 +29,9 @@
 
                 @if (Auth::check())
                 <div class="card-footer">
-                    <favorite 
-                        :post={{ $post->id }} 
-                        :favorited={{ $post->favorited() ? 'true' : 'false' }} >
+                    <favorite :post={{ $post->id }} :favorited={{ $post->favorited() ? 'true' : 'false' }} >
                     </favorite>
-                </div> 
+                </div>
                 @endif
 
             </div>
