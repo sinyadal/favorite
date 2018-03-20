@@ -3,7 +3,7 @@
 <section class="section">
     <div class="container">
         @forelse ($posts as $post)
-        <div class="card mb-3">
+        <div class="card mb-4">
             <div class="card-content">
                 @if (Auth::check())
                 <favorite :post={{ $post->id }} :favorited={{ $post->favorited() ? 'true' : 'false' }} >
@@ -16,19 +16,11 @@
         @empty
         <p>No post created.</p>
         @endforelse 
-        {{ $posts->links() }}
-
+        <div class="is-centered mt-5">
+            {{ $posts->links('vendor.pagination.bulma') }}
+        </div>
+    
     </div>
 </section>
-
-<div class="container">
-    <div class="columns">
-        <div class="card">
-            <div class="card-content">
-                <forma></forma>
-            </div>
-        </div>
-    </div>
-</div>
 
 @endsection
