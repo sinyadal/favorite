@@ -66,4 +66,8 @@ $card-shadow: none;
     border: 1px solid $grey-lighter;
 }
     
-  
+$checkbox-radius: $radius;
+$checkbox-border: 1px solid $grey-lighter;
+$checkbox-block-background: $white-ter;
+$checkradio-focus: 1px $grey-light;
+$checkradio-top-offset: 0rem;
