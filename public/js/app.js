@@ -47078,6 +47078,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (response) {
                 return console.log(response.data);
             });
+            this.$snackbar.open({
+                message: 'Post liked!',
+                queue: false
+            });
         },
         unFavorite: function unFavorite(post) {
             var _this2 = this;
@@ -47086,6 +47090,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 return _this2.isFavorited = false;
             }).catch(function (response) {
                 return console.log(response.data);
+            });
+            this.$snackbar.open({
+                message: 'Post disliked!',
+                queue: false
             });
         }
     }
@@ -47112,7 +47120,11 @@ var render = function() {
               }
             }
           },
-          [_c("i", { staticClass: "fa fa-heart" })]
+          [
+            _c("i", { staticClass: "material-icons is-pulled-right" }, [
+              _vm._v("favorite")
+            ])
+          ]
         )
       : _c(
           "a",
@@ -47125,7 +47137,11 @@ var render = function() {
               }
             }
           },
-          [_c("i", { staticClass: "fa fa-heart-o" })]
+          [
+            _c("i", { staticClass: "material-icons is-pulled-right" }, [
+              _vm._v("favorite_border")
+            ])
+          ]
         )
   ])
 }
