@@ -13,6 +13,8 @@
   @include margin-helper(2, 1rem);
   @include margin-helper(3, 1.5rem);
   @include margin-helper(4, 2rem);
+  @include margin-helper(5, 2.5rem);
+  @include margin-helper(6, 3rem);
   
   @mixin padding-helper($level, $spacing) {
     .p-#{$level} {padding: #{$spacing}!important;}
@@ -29,6 +31,8 @@
   @include padding-helper(2, 1rem);
   @include padding-helper(3, 1.5rem);
   @include padding-helper(4, 2rem);
+  @include padding-helper(5, 2.5rem);
+  @include padding-helper(6, 3rem);
   
   @mixin letter-spacing($level, $spacing) {
     .wide-#{$level} {letter-spacing: #{$spacing}!important;}
