@@ -9,38 +9,23 @@
 
             <div class="card mb-3">
                 <div class="card-content">
+                    @if (Auth::check())
                     <i class="material-icons is-pulled-right">favorite_border</i>
-                    <p class="title is-4">Lorem ipsum dolor sit amet.</p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, aperiam!
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, aperiam!
-                </div>
-            </div>
-
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $post->title }}</h5>
-                    {{ $post->body }}
-                </div>
-
-                @if (Auth::check())
-                <div class="card-footer">
                     <favorite :post={{ $post->id }} :favorited={{ $post->favorited() ? 'true' : 'false' }} >
                     </favorite>
+                    @endif
+                    <p class="title is-4">{{ $post->title }}</p>
+                    {{ $post->body }}
                 </div>
-                @endif
-
             </div>
 
             @empty
 
             <p>No post created.</p>
 
-            @endforelse {{ $posts->links() }}
+            @endforelse 
+            
+            {{ $posts->links() }}
         </div>
     </div>
 </div>
