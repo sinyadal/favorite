@@ -1,31 +1,31 @@
 @extends('layouts.app') @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h3 class="mt-4 mb-4">Your Favorite</h3>
 
+<section class="section">
+        <div class="container">
+            <h1 class="title is-1">All Favorite Posts.</h1>
             @forelse ($myFavorites as $myFavorite)
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $myFavorite->title }}</h5>
-                    {{ $myFavorite->body }}
+            <div class="card my-3">
+                <div class="card-content">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p class="title is-4">{{ $myFavorite->title }}</p>
+                                {{ $myFavorite->body }}
+                            </div>
+                        </div>
+                        <div class="media-right">
+                            @if (Auth::check())
+                            <favorite :myFavorite={{ $myFavorite->id }} :favorited={{ $myFavorite->favorited() ? 'true' : 'false' }} >
+                            </favorite>
+                            @endif
+                        </div>
+                    </article>
                 </div>
-
-                @if (Auth::check())
-                <div class="card-footer">
-                    <favorite 
-                        :post={{ $myFavorite->id }} 
-                        :favorited={{ $myFavorite->favorited() ? 'true' : 'false' }} >
-                    </favorite>
-                </div>
-                @endif
             </div>
-
             @empty
-            
-            <p>You have no favorite posts.</p>
+            <p>No favorite post created.</p>
             @endforelse
+
         </div>
-    </div>
-</div>
+    </section>
 @endsection
