@@ -15,7 +15,9 @@
                         </div>
                         <div class="media-right">
                             @if (Auth::check())
-                            <favorite :myFavorite={{ $myFavorite->id }} :favorited={{ $myFavorite->favorited() ? 'true' : 'false' }} >
+                            <favorite 
+                                :post={{ $myFavorite->id }} 
+                                :favorited={{ $myFavorite->favorited() ? 'true' : 'false' }} >
                             </favorite>
                             @endif
                         </div>
